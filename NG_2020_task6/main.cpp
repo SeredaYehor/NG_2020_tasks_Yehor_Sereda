@@ -4,51 +4,51 @@ using namespace std;
 
 int main()
 {
-    int x,y,z,i,j,k;
+    int x,symbol,stroka,i,stroka2,white_space;
     cout << "Enter size:";
     cin >> x;
-    i=x-(x-1);
-    j=x;
-    for (z=1; z <= x; z++)
+    i=x-(x-1); //stroka-1
+    stroka2=x;
+    for (stroka=1; stroka <= x; stroka++)
         {
-        for (y=1;y <= x;y++) cout << '*';
+        for (symbol=1;symbol<= x;symbol++) cout << '*';
         cout << endl;
         }
     cout << endl;
-    for (z=1; z <= x; z++)
+    for (stroka=1; stroka <= x; stroka++)
         {
-          for(y=0;y<i;y++) cout << '*';
+          for(symbol=0;symbol<i;symbol++) cout << '*';
           i++;
           cout << endl;
         }
     cout << endl;
-    k=x;
-    for(z=0;z<x;z++)
+    white_space=x;
+    for(stroka=0;stroka<x;stroka++)
     {
-        for(y=1;y<=x;y++)
+        for(symbol=1;symbol<=x;symbol++)
         {
-            if (y<k) cout << " ";
+            if (symbol<white_space) cout << " ";
             else cout << '*';
         }
-        k--;
+        white_space--;
         cout << endl;
     }
     cout << endl;
-    for (z=1; z <= x; z++)
+    for (stroka=1; stroka <= x; stroka++)
         {
-            for(y=0;y<j;y++) cout << '*';
-            j--;
+            for(symbol=0;symbol<stroka2;symbol++) cout << '*';
+            stroka2--;
             cout << endl;
         }
     cout << endl;
-    for(z=0;z<x;z++)
+    for(stroka=0;stroka<x;stroka++)
     {
-        for(y=1;y<=x&&k<x;y++)
+        for(symbol=1;symbol<=x&&white_space<x;symbol++)
         {
-            if (y<=k) cout << " ";
+            if (symbol<=white_space) cout << " ";
             else cout << '*';
         }
-        k++;
+        white_space++;
         cout << endl;
     }
     return 0;
