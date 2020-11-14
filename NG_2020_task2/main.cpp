@@ -15,22 +15,13 @@ int main()
     cin >> b;
     cout << "Vvedite deistvie:" << endl;
     cin >> c;
-    if (c == sum)
-       {
-           Res = a+b;
-       }
-    if (c == raz)
-       {
-           Res = a-b;
-       }
-    if (c == mnog)
-       {
-           Res = a*b;
-       }
-    if (c == delenie)
-       {
-           Res = a/b;
-       }
-    cout << "Rezultat:" <<Res;
+    if (c<delenie)
+    {
+        if (c == sum)Res = a+b;
+        if (c == raz)Res = a-b;
+        if (c == mnog)Res = a*b;
+        if (c == delenie)  Res = a/b;
+        cout << "Rezultat:" <<Res;
+    }
     return 0;
 }
