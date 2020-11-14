@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int a,b,c,Res;
+    float a,b,c,Res;
     int sum = 1;
     int raz = 2;
     int mnog = 3;
@@ -15,7 +15,7 @@ int main()
     cin >> b;
     cout << "Vvedite deistvie:" << endl;
     cin >> c;
-    if (c<delenie)
+    if (c<delenie && c>0)
     {
         if (c == sum)Res = a+b;
         if (c == raz)Res = a-b;
