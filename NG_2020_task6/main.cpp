@@ -20,13 +20,10 @@ int main()
           cout << endl;
         }
     cout << endl;
-    for(stroka=0;stroka<x;stroka++)
+    for(int stroka=0;stroka<x;stroka++)
     {
-        for(y=1;y<=x;y++)
-        {
-            if (y<x-stroka) cout << " ";
-            else cout << '*';
-        }
+        for(int y=1;y<x-stroka;y++)cout << " ";
+        for(int y=0;y<=stroka;y++) cout << '*';
         cout << endl;
     }
     cout << endl;
@@ -36,14 +33,10 @@ int main()
             cout << endl;
         }
     cout << endl;
-    for(stroka=0;stroka<x;)
+    for( int stroka=0;stroka<x;stroka++)
     {
-        for(y=1;y<=x;y++)
-        {
-            if (y<=stroka) cout << " ";
-            else cout << '*';
-        }
-        stroka++;
+        for(int y = 1;y<=stroka;y++) cout << " ";
+        for(int y = 1;y<=x-stroka;y++) cout << '*';
         cout << endl;
     }
     return 0;
