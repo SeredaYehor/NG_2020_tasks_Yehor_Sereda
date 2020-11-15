@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-    float a,b,c,Res;
+    float a,b,Res;
+    int c;
     int sum = 1;
     int raz = 2;
     int mnog = 3;
@@ -15,13 +16,24 @@ int main()
     cin >> b;
     cout << "Vvedite deistvie:" << endl;
     cin >> c;
-    if (c<delenie && c>0)
+    switch(c)
     {
-        if (c == sum)Res = a+b;
-        if (c == raz)Res = a-b;
-        if (c == mnog)Res = a*b;
-        if (c == delenie)  Res = a/b;
-        cout << "Rezultat:" <<Res;
+        case 1:
+           Res = a+b;
+           cout << "Rezultat:" <<Res;
+           break;
+        case 2:
+           Res = a-b;
+           cout << "Rezultat:" <<Res;
+           break;
+        case 3:
+           Res = a*b;
+           cout << "Rezultat:" <<Res;
+           break;
+        case 4:
+           Res = a/b;
+           cout << "Rezultat:" <<Res;
+           break;
     }
     return 0;
 }
