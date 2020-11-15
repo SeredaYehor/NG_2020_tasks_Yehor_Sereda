@@ -8,7 +8,7 @@ int main()
     cout << "Enter number:";
     cin >> x;
     cout << '0';
-    for(y=1;!(y>x);y++)
+    for(y=1;y<=x;y++)
     {
         cout<< ',' << y;
     }
