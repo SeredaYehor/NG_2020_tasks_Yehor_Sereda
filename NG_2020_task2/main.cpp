@@ -20,20 +20,17 @@ int main()
     {
         case 1:
            Res = a+b;
-           cout << "Rezultat:" <<Res;
            break;
         case 2:
            Res = a-b;
-           cout << "Rezultat:" <<Res;
            break;
         case 3:
            Res = a*b;
-           cout << "Rezultat:" <<Res;
            break;
         case 4:
            Res = a/b;
-           cout << "Rezultat:" <<Res;
            break;
     }
+     if (c<=4)cout << "Rezultat:" <<Res;
     return 0;
 }
