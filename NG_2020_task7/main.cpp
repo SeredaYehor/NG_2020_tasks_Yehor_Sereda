@@ -5,12 +5,12 @@ using namespace std;
 int main()
 {
     int x,y;
-    cout << "Vvedite chislo:" << endl;
+    cout << "Enter number:";
     cin >> x;
-    for(y=0;y<=x;y++)
+    cout << '0';
+    for(y=1;!(y>x);y++)
     {
-        cout << y;
-        if(y<x) cout << ',';
+        cout<< ',' << y;
     }
     return 0;
 }
