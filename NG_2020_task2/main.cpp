@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    float a,b,Res;
+    float a,b;
     int c;
     int sum = 1;
     int raz = 2;
@@ -16,21 +16,23 @@ int main()
     cin >> b;
     cout << "Vvedite deistvie:" << endl;
     cin >> c;
+    cout << "Rezultat: ";
     switch(c)
     {
         case 1:
-           Res = a+b;
+           cout << a+b;
            break;
         case 2:
-           Res = a-b;
+           cout << a-b;
            break;
         case 3:
-           Res = a*b;
+           cout << a*b;
            break;
         case 4:
-           Res = a/b;
+           cout << a/b;
            break;
+        default:
+            cout << "Error";
     }
-     if (c<=4)cout << "Rezultat:" <<Res;
     return 0;
 }
