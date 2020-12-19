@@ -8,16 +8,12 @@ int main()
     int number_of_words = 0;
     cout << "Enter string: ";
     cin.getline(stroka,50);
-    if(stroka[0] != '\0')
-    {
-    number_of_words=1;
     for(int i = 0;stroka[i] != '\0';i++)
     {
-        if(stroka[i+1]!=' '&&(stroka[i]>='a'&&stroka[i]<='z')==(stroka[i+1]>='0'&&stroka[i+1]<='9')&&stroka[i]!=stroka[i+1])
+        if(((stroka[i]>='a'&&stroka[i]<='z')||(stroka[i]>='A'&&stroka[i]<='Z'))&&(stroka[i+1]<'a'||stroka[i+1]>'z'))
         {
            ++number_of_words;
         }
-    }
     }
     cout << "Number of words=" << number_of_words;
     return 0;
