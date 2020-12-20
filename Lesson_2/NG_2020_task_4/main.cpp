@@ -24,9 +24,8 @@ int main()
     {
     for(number_of_stolbik=0;number_of_stolbik<5;number_of_stolbik++)
     {
-        if(arr[number_of_stolbik]>0)cout << '*';
+        if(arr[number_of_stolbik]-line>0)cout << '*';
         else cout << " ";
-        arr[number_of_stolbik]--;
     }
     cout<<endl;
     }
