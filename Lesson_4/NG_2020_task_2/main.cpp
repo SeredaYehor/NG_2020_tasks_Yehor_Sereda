@@ -3,7 +3,11 @@
 using namespace std;
 
 int stroka = 1;
-int y = 1;
+
+void endline()
+{
+    cout << endl;
+}
 
 void write_cube(int x,int stroka)
 {
@@ -15,7 +19,7 @@ void write_cube(int x,int stroka)
     }
     else
     {
-        cout << endl;
+        endline();
         stroka=1;
     }
 }
@@ -38,10 +42,7 @@ void write_triangle(int y,int stroka)
         y++;
         write_triangle(y,stroka);
     }
-    else
-    {
-        cout << endl;
-    }
+    else endline();
 }
 
 void triangle(int x, int y)
@@ -52,7 +53,7 @@ void triangle(int x, int y)
         stroka++;
         triangle(x,y);
     }
-    else stroka = 1;
+    stroka = 1;
 }
 
 void stars(int y, int stroka)
@@ -65,13 +66,13 @@ void stars(int y, int stroka)
    }
 }
 
-void write_rev_triangle(int y , int stroka,int x)
+void write_rev_triangle(int y, int x)
 {
-    if(y<x-stroka)
+    if(y<x)
     {
         cout << " ";
         y++;
-        write_rev_triangle(y, stroka, x);
+        write_rev_triangle(y, x);
     }
 }
 
@@ -79,13 +80,13 @@ void rev_triangle(int x, int y)
 {
     if(stroka<=x)
     {
-        write_rev_triangle(0,stroka,x);
+        write_rev_triangle(0,x-stroka);
         stars(1,stroka);
-        cout << endl;
+        endline();
         stroka++;
         rev_triangle(x,y);
     }
-    else stroka = 1;
+    stroka = 1;
 }
 
 void write_upper_triangle(int y, int x)
@@ -103,11 +104,11 @@ void upper_triangle(int x, int stroka)
     if(stroka <= x)
     {
         write_upper_triangle(0,x-stroka);
-        cout << endl;
+        endline();
         stroka++;
         upper_triangle(x,stroka);
     }
-    else stroka = 1;
+    stroka = 1;
 }
 
 void write_reverse_upper_triangle(int x,int y)
@@ -127,7 +128,7 @@ void reverse_upper_triangle(int x,int stroka)
         write_reverse_upper_triangle(1,stroka);
         stars(0,x-stroka);
         stroka++;
-        cout << endl;
+        endline();
         reverse_upper_triangle(x,stroka);
     }
 }
@@ -138,13 +139,13 @@ int main()
     cout << "Enter size:";
     cin >> x;
     cube(x,stroka);
-    cout << endl;
+    endline();
     triangle(x,stroka);
-    cout << endl;
+    endline();
     rev_triangle(x,stroka);
-    cout << endl;
+    endline();
     upper_triangle(x,stroka);
-    cout << endl;
+    endline();
     reverse_upper_triangle(x,stroka);
     return 0;
 }
