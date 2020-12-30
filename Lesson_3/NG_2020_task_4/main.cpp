@@ -15,11 +15,11 @@ int main()
         same_sym=0;
         for(int i = iter;stroka[i] != '\0';i++)
         {
-            if(stroka[i]>='a'&&stroka[i]<='z'&&stroka[iter]==stroka[i]) same_sym++;
+            if(((stroka[i]>='a'&&stroka[i]<='z')||(stroka[i]>='A'&&stroka[i]<='Z'))&&(stroka[iter]==stroka[i]||stroka[iter]-32==stroka[i]||stroka[iter]==stroka[i]-32)) same_sym++;
         }
         for(sym_max = iter-1;sym_max >= 0;sym_max--)
         {
-            if(stroka[sym_max]==stroka[iter])
+            if(stroka[sym_max]==stroka[iter]||stroka[iter]-32==stroka[sym_max]||stroka[iter]==stroka[sym_max]-32)
             {
                 alpha_max=1;
                 break;
@@ -27,7 +27,8 @@ int main()
         }
         if(alpha_max!=1)
         {
-        symbol[iter]=stroka[iter]-32;
+        if(stroka[iter]>='a'&&stroka[iter]<='z') stroka[iter]-=32;
+        symbol[iter]=stroka[iter];
         number_of_sym[iter]=same_sym;
         }
     }
