@@ -13,7 +13,7 @@ int num_words(char arr[50],int iter,int number_of_words)
 {
     if(arr[iter] != '\0')
     {
-        if(((arr[iter]>='a'&&arr[iter]<='z')||(arr[iter]>='A'&&arr[iter]<='Z'))&&(arr[iter+1]<'a'||arr[iter+1]>'z'))
+        if(((arr[iter]>='a'&&arr[iter]<='z')||(arr[iter]>='A'&&arr[iter]<='Z'))&&(arr[iter+1]<'a'||arr[iter+1]>'z')&&(arr[iter+1]<'A'||arr[iter+1]>'Z'))
         {
            number_of_words+=1;
         }
