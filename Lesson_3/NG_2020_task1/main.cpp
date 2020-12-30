@@ -10,7 +10,7 @@ int main()
     cin.getline(stroka,50);
     for(int i = 0;stroka[i] != '\0';i++)
     {
-        if(((stroka[i]>='a'&&stroka[i]<='z')||(stroka[i]>='A'&&stroka[i]<='Z'))&&(stroka[i+1]<'a'||stroka[i+1]>'z'))
+        if(((stroka[i]>='a'&&stroka[i]<='z')||(stroka[i]>='A'&&stroka[i]<='Z'))&&(stroka[i+1]<'a'||stroka[i+1]>'z')&&(stroka[i+1]<'A'||stroka[i+1]>'Z'))
         {
            ++number_of_words;
         }
