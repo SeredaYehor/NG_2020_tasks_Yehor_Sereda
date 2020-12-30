@@ -2,7 +2,6 @@
 
 using namespace std;
 
-int stroka = 1;
 
 void endline()
 {
@@ -20,17 +19,16 @@ void write_cube(int x,int stroka)
     else
     {
         endline();
-        stroka=1;
     }
 }
 
-void cube(int x,int y)
+void cube(int x,int y,int stroka)
 {
     if(y<=x)
     {
         write_cube(x,stroka);
         y++;
-        cube(x,y);
+        cube(x,y,1);
     }
 }
 
@@ -45,15 +43,14 @@ void write_triangle(int y,int stroka)
     else endline();
 }
 
-void triangle(int x, int y)
+void triangle(int x, int y, int stroka)
 {
     if(stroka<=x)
     {
         write_triangle(y,stroka);
         stroka++;
-        triangle(x,y);
+        triangle(x,y,stroka);
     }
-    stroka = 1;
 }
 
 void stars(int y, int stroka)
@@ -76,7 +73,7 @@ void write_rev_triangle(int y, int x)
     }
 }
 
-void rev_triangle(int x, int y)
+void rev_triangle(int x, int y,int stroka)
 {
     if(stroka<=x)
     {
@@ -84,9 +81,8 @@ void rev_triangle(int x, int y)
         stars(1,stroka);
         endline();
         stroka++;
-        rev_triangle(x,y);
+        rev_triangle(x,y,stroka);
     }
-    stroka = 1;
 }
 
 void write_upper_triangle(int y, int x)
@@ -99,16 +95,15 @@ void write_upper_triangle(int y, int x)
     }
 }
 
-void upper_triangle(int x, int stroka)
+void upper_triangle(int x, int stroka,int y)
 {
     if(stroka <= x)
     {
         write_upper_triangle(0,x-stroka);
         endline();
         stroka++;
-        upper_triangle(x,stroka);
+        upper_triangle(x,stroka,y);
     }
-    stroka = 1;
 }
 
 void write_reverse_upper_triangle(int x,int y)
@@ -121,7 +116,7 @@ void write_reverse_upper_triangle(int x,int y)
     }
 }
 
-void reverse_upper_triangle(int x,int stroka)
+void reverse_upper_triangle(int x,int stroka, int y)
 {
     if(stroka<=x)
     {
@@ -129,7 +124,7 @@ void reverse_upper_triangle(int x,int stroka)
         stars(0,x-stroka);
         stroka++;
         endline();
-        reverse_upper_triangle(x,stroka);
+        reverse_upper_triangle(x,stroka,y);
     }
 }
 
@@ -138,14 +133,14 @@ int main()
     int x;
     cout << "Enter size:";
     cin >> x;
-    cube(x,stroka);
+    cube(x,1,1);
     endline();
-    triangle(x,stroka);
+    triangle(x,1,1);
     endline();
-    rev_triangle(x,stroka);
+    rev_triangle(x,1,1);
     endline();
-    upper_triangle(x,stroka);
+    upper_triangle(x,1,1);
     endline();
-    reverse_upper_triangle(x,stroka);
+    reverse_upper_triangle(x,1,1);
     return 0;
 }

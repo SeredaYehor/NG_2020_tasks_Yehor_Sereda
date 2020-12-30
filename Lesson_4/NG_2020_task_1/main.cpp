@@ -6,10 +6,10 @@ int get_card_numb()
 {
     int nomer_karti;
     cin >> nomer_karti;
-    if(nomer_karti>10||nomer_karti<0)
+    while(nomer_karti>10||nomer_karti<0)
     {
-        cout << "Error" << endl;
-        return get_card_numb();
+        cout << "Oshibka, neverniy nomer karti! Pogaluista vvedite pravilniy nomer." << endl;
+        cin >> nomer_karti;
     }
     return nomer_karti;
 }
@@ -20,7 +20,7 @@ int get_val()
     cin >> sum;
     if(sum<0)
     {
-        cout << "Error" << endl;
+        cout << "" << endl;
         return get_val();
     }
     return sum;
