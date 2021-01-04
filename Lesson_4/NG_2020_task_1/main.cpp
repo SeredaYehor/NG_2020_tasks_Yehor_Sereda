@@ -18,12 +18,12 @@ int get_val()
 {
     int sum;
     cin >> sum;
-    if(sum<0)
+    if(sum>0) return sum;
+    else
     {
-        cout << "" << endl;
+        cout << "Oshibka, vi ne mozhete stolko polozhit. Pogaluista vvedite vernuu sumu dlya vlozheniya." << endl;
         return get_val();
     }
-    return sum;
 }
 
 void set_val(int arr[10], int sum , int number)
@@ -41,17 +41,20 @@ void show(int arr[10],int number,int res)
     cout << endl << "v summe na vseh kartah:" << res;
 }
 
-int karti[10]={0};
 
-int main(int arr[10])
+int main()
 {
+       int karti[10]={0};
        int nomer_karti,sum;
-       cout << endl << "vvedite nomer kartochki:";
-       nomer_karti = get_card_numb();
-       cout << "skolko_polozhit?";
-       sum = get_val();
-       cout << endl;
-       set_val(karti,sum,nomer_karti);
-       show(karti,nomer_karti,0);
-       main(karti);
+       while(true)
+       {
+            cout << endl << "vvedite nomer kartochki:";
+            nomer_karti = get_card_numb();
+            cout << "skolko_polozhit?";
+            sum = get_val();
+            cout << endl;
+            set_val(karti,sum,nomer_karti);
+            show(karti,nomer_karti,0);
+       }
+       return 0;
 }
