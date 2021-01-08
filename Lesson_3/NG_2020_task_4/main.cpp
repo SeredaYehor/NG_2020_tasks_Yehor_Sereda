@@ -4,35 +4,23 @@ using namespace std;
 
 int main()
 {
-    char stroka[50],symbol[26],alpha_max;
-    int same_sym = 0,sym_max;
-    int number_of_sym[26]={255};
+    char stroka[50],symbol[26],alpha_max,sym_max;
+    int number_of_sym[26]={0};
+    int iter = 0;
     cout << "Enter string: ";
     cin.getline(stroka,50);
-    for(int iter = 0;stroka[iter] != '\0';iter++)
+    while(stroka[iter] != 0)
     {
-        alpha_max=0;
-        same_sym=0;
-        for(int i = iter;stroka[i] != '\0';i++)
+        char buffer = stroka[iter];
+        if((buffer >= 'a' && buffer <= 'z')||(buffer >= 'A' && buffer <= 'Z'))
         {
-            if(((stroka[i]>='a'&&stroka[i]<='z')||(stroka[i]>='A'&&stroka[i]<='Z'))&&(stroka[iter]==stroka[i]||stroka[iter]-32==stroka[i]||stroka[iter]==stroka[i]-32)) same_sym++;
+            if(buffer >= 'a' && buffer <= 'z') buffer -= 32;
+            number_of_sym[buffer - 'A']++;
+            symbol[buffer - 'A'] = buffer;
         }
-        for(sym_max = iter-1;sym_max >= 0;sym_max--)
-        {
-            if(stroka[sym_max]==stroka[iter]||stroka[iter]-32==stroka[sym_max]||stroka[iter]==stroka[sym_max]-32)
-            {
-                alpha_max=1;
-                break;
-            }
-        }
-        if(alpha_max!=1)
-        {
-        if(stroka[iter]>='a'&&stroka[iter]<='z') stroka[iter]-=32;
-        symbol[iter]=stroka[iter];
-        number_of_sym[iter]=same_sym;
-        }
+        iter++;
     }
-    for(int iter = 0;iter<26;iter++)
+    for(iter = 0;iter<26;iter++)
     {
         sym_max = number_of_sym[iter];
         for(int sorting = iter;sorting<26;sorting++)
@@ -48,9 +36,9 @@ int main()
             }
         }
     }
-    for(int iter = 0;number_of_sym[iter]!=0;iter++)
+    for(iter = 0;iter<26;iter++)
     {
-        cout << symbol[iter] << '-' << number_of_sym[iter] << endl;
+        if(number_of_sym[iter] != 0) cout << symbol[iter] << '-' << number_of_sym[iter] << endl;
     }
     return 0;
 }
