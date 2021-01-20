@@ -1,14 +1,10 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main()
 {
-    string output = "ya ne znayu etu shkolu!"; // question about string!!!
-    unsigned short int moya_shkola;
-    unsigned short int nomer_shkoli;
-    unsigned short int mas[10];
+    unsigned short int moya_shkola, nomer_shkoli, mas[10];
     for(int iter = 0;iter < 10;iter++)
     {
        cout << "vvedi nomer shkoli:";
@@ -21,10 +17,10 @@ int main()
     {
         if(mas[iter] == moya_shkola)
         {
-            output = "ya znayu etu shkolu!";
-            iter = 10;
+            cout << "ya znayu etu shkolu!";
+            return 0;
         }
     }
-    cout << output;
+    cout << "ya ne znau etu shkolu!";
     return 0;
 }
