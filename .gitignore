@@ -3,3 +3,7 @@
 *cbp
 *depend
 *layout
+*Debug
+*Release
+*o
+*user
