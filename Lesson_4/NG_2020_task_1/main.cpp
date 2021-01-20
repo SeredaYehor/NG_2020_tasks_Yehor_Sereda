@@ -5,6 +5,7 @@ using namespace std;
 int get_card_numb()
 {
     int nomer_karti;
+    cout << endl << "vvedite nomer kartochki:";  //transported output from main function
     cin >> nomer_karti;
     while(nomer_karti>10||nomer_karti<0)
     {
@@ -17,6 +18,7 @@ int get_card_numb()
 int get_val()
 {
     int sum;
+    cout << "skolko_polozhit?";     //transported output from main function
     cin >> sum;
     if(sum>0) return sum;
     else
@@ -28,10 +30,11 @@ int get_val()
 
 void set_val(int arr[10], int sum , int number)
 {
+    cout << endl;
     arr[number]+=sum;
 }
 
-void show(int arr[10],int number,int res)
+void show(int arr[10],int res)
 {
     for(int i = 0;i<10;i++)
     {
@@ -48,13 +51,10 @@ int main()
        int nomer_karti,sum;
        while(true)
        {
-            cout << endl << "vvedite nomer kartochki:";
             nomer_karti = get_card_numb();
-            cout << "skolko_polozhit?";
-            sum = get_val();
-            cout << endl;
+            sum = get_val();                    // question about transporting function!!!
             set_val(karti,sum,nomer_karti);
-            show(karti,nomer_karti,0);
+            show(karti,0);
        }
        return 0;
 }
