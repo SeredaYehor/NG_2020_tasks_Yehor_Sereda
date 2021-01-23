@@ -25,10 +25,10 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QTextEdit" name="textEdit"/>
+      <widget class="QTextEdit" name="Input_text"/>
      </item>
      <item>
-      <widget class="QSpinBox" name="spinBox"/>
+      <widget class="QSpinBox" name="Num_of_words"/>
      </item>
      <item>
       <spacer name="verticalSpacer">
