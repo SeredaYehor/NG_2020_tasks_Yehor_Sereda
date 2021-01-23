@@ -26,7 +26,7 @@ Calculator::Calculator(QWidget *parent)
 }
 
     float number;
-    int action;
+    char action;
 
 Calculator::~Calculator()
 {
@@ -36,42 +36,42 @@ Calculator::~Calculator()
 void Calculator::output()
 {
     QPushButton * button = (QPushButton*)sender();
-    if(ui->lineEdit->text()=="0") ui->lineEdit->clear();
+    if(ui->Res_bar->text()=="0") ui->Res_bar->clear();
     if(button->text()=="+")
     {
-        number = ui->lineEdit->text().toInt();
-        action = 43;
-        ui->lineEdit->clear();
+        number = ui->Res_bar->text().toInt();
+        action = '+';
+        ui->Res_bar->clear();
     }
     else if(button->text()=="-")
     {
-        number = ui->lineEdit->text().toInt();
-        action = 45;
-        ui->lineEdit->clear();
+        number = ui->Res_bar->text().toInt();
+        action = '-';
+        ui->Res_bar->clear();
     }
     else if(button->text()=="*")
     {
-        number = ui->lineEdit->text().toInt();
-        action = 42;
-        ui->lineEdit->clear();
+        number = ui->Res_bar->text().toInt();
+        action = '*';
+        ui->Res_bar->clear();
     }
     else if(button->text()=="/")
     {
-        number = ui->lineEdit->text().toInt();
-        action = 47;
-        ui->lineEdit->clear();
+        number = ui->Res_bar->text().toInt();
+        action = '/';
+        ui->Res_bar->clear();
     }
     else if(button->text()=="=")
     {
         switch(action)
         {
-            case 45: number -= ui->lineEdit->text().toInt(); break;
-            case 43: number += ui->lineEdit->text().toInt(); break;
-            case 42: number *= ui->lineEdit->text().toInt(); break;
-            case 47: number /= ui->lineEdit->text().toInt(); break;
+            case '-': number -= ui->Res_bar->text().toInt(); break;
+            case '+': number += ui->Res_bar->text().toInt(); break;
+            case '*': number *= ui->Res_bar->text().toInt(); break;
+            case '/': number /= ui->Res_bar->text().toInt(); break;
         }
-        ui->lineEdit->setText(QString::number(number));
+        ui->Res_bar->setText(QString::number(number));
     }
-    else ui->lineEdit->setText(ui->lineEdit->text() + button->text());
+    else ui->Res_bar->setText(ui->Res_bar->text() + button->text());
 }
 

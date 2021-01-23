@@ -14,7 +14,7 @@
    <string>Calculator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="Res_bar">
     <property name="geometry">
      <rect>
       <x>280</x>
