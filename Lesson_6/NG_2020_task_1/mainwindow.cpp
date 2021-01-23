@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     font.setPointSize(20);
     ui->pushButton->setFont(font);
 
-    ui->lineEdit_3->setReadOnly(true);
+    ui->result->setReadOnly(true);
 
     connect(ui->pushButton,&QPushButton::clicked, this, &MainWindow::result);
 }
@@ -25,8 +25,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::result()
 {
-    float val_1 = ui->lineEdit->text().toFloat();
-    float val_2 = ui->lineEdit_2->text().toFloat();
-    ui->lineEdit_3->setText(QString::number(val_1+val_2));
+    float val_1 = ui->input_1->text().toFloat();
+    float val_2 = ui->input_2->text().toFloat();
+    ui->result->setText(QString::number(val_1+val_2));
 }
 
