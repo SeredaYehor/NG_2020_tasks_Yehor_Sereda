@@ -24,7 +24,7 @@ int main()
             if(arr[number_of_stolbik] - line > 0) cout << '*';
             else cout << " ";
         }
-    cout << endl;
+        cout << endl;
     }
     return 0;
 }
