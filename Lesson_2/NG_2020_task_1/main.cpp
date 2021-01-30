@@ -14,8 +14,17 @@ int main()
     cout << "a teper vvedi svoyu shkolu:";
     cin >> moya_shkola;
     iter = 0;
-    while(mas[iter]!=moya_shkola&&iter<=10){iter++;}
-    if(iter<10) cout << "ya znayu etu shkolu!";
-    else cout << "ya ne znau etu shkolu!";
+    while(mas[iter] != moya_shkola && iter <= 10)
+    {
+        iter++;
+    }
+    if(iter<10)
+    {
+        cout << "ya znayu etu shkolu!";
+    }
+    else
+    {
+        cout << "ya ne znau etu shkolu!";
+    }
     return 0;
 }
