@@ -20,7 +20,10 @@ int get_val()
     int sum;
     cout << "skolko_polozhit?";     //transported output from main function
     cin >> sum;
-    if(sum>0) return sum;
+    if(sum>0)
+    {
+        return sum;
+    }
     else
     {
         cout << "Oshibka, vi ne mozhete stolko polozhit. Pogaluista vvedite vernuu sumu dlya vlozheniya." << endl;
@@ -52,7 +55,7 @@ int main()
        while(true)
        {
             nomer_karti = get_card_numb();
-            sum = get_val();                    // question about transporting function!!!
+            sum = get_val();
             set_val(karti,sum,nomer_karti);
             show(karti,0);
        }
