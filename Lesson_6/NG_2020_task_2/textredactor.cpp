@@ -22,17 +22,16 @@ TextRedactor::~TextRedactor()
 void TextRedactor::output()
 {
     QString input =  ui->Input_text->toPlainText();
-    int i = 0,b = 0;
+    int iter = 0;
     ui->Num_of_words->setValue(0);
-    if(input[0].isLetter()) b = 1;
-    while(i < input.length()-1)
+    if(input[0].isLetter()) ui->Num_of_words->setValue(1);
+    while(iter < input.length()-1)
     {
-        if(!input[i].isLetter()&&input[i+1].isLetter())
+        if(!input[iter].isLetter()&&input[iter+1].isLetter())
         {
-            b+=1;
+            ui->Num_of_words->setValue(ui->Num_of_words->value()+1);
         }
-        ui->Num_of_words->setValue(b);
-        i++;
+        iter++;
     }
 }
 
