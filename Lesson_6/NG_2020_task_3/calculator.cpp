@@ -65,10 +65,10 @@ void Calculator::output()
     {
         switch(action)
         {
-            case '-': number -= ui->Res_bar->text().toInt(); break;
-            case '+': number += ui->Res_bar->text().toInt(); break;
-            case '*': number *= ui->Res_bar->text().toInt(); break;
-            case '/': number /= ui->Res_bar->text().toInt(); break;
+            case '-': number -= ui->Res_bar->text().toFloat(); break;
+            case '+': number += ui->Res_bar->text().toFloat(); break;
+            case '*': number *= ui->Res_bar->text().toFloat(); break;
+            case '/': number /= ui->Res_bar->text().toFloat(); break;
         }
         ui->Res_bar->setText(QString::number(number));
     }
